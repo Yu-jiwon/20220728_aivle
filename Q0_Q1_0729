@@ -1,0 +1,31 @@
+#Q0
+N, X = map(int, input().split())
+data = list(map(int, input().split()))
+answer = []
+for i in range(N):
+  if data[i]<X:
+    answer.append(data[i])
+for j in range(len(answer)):
+  print(answer[j], end=' ')
+  
+#Q1
+def solution(lottos, win_nums):
+    zero = 0
+    count = 0
+    rank = [6, 6, 5, 4, 3, 2, 1]
+    
+    for i in range(len(lottos)):
+        if lottos[i] == 0:
+            zero +=1
+    
+    for j in range(len(lottos)):
+        for k in range(len(win_nums)):
+            if lottos[j]==win_nums[k]:
+                count+=1
+    answer = rank[zero+count], rank[count]
+    return answer
+
+lottos = [44, 1, 0, 0, 31, 25]
+win_nums = [31, 10, 45, 1, 6, 19]
+answer = solution(lottos, win_nums)
+print(answer)  
