@@ -1,0 +1,18 @@
+#Q2
+
+#Q3
+def solution(store, customer):
+    answer = []
+    for i in range(len(customer)):
+        if customer[i] not in store:
+            answer.append('no')
+            
+        else:
+            answer.append('yes')
+            
+    return answer
+
+store = [2,3,7,8,9]
+customer = [7,5,9]
+answer = solution(store, customer)
+print(answer)
